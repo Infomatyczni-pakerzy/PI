@@ -16,6 +16,9 @@ void encrypt(char* tekst)
     while(tekst[start]==' ' && start<100)
         start++;
 
+	// UPDATE do while ponizej: zamiast tego dlugiego warunku moze byc tez:
+	// (tekst[start] != ' ' && tekst[start] != '\0' && tekst[start] != '\n' )
+	
     while( ( ( ( (int)tekst[start] <= 90) && ( (int)tekst[start] >= 65) ) || ( ( (int)tekst[start] <= 122) && ( (int)tekst[start] >= 97) )) && start<100 )
         {
             key++;
