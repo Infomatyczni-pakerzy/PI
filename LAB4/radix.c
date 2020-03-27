@@ -1,8 +1,16 @@
 #include <stdio.h>
 
-void printArr(int arr[], int len){
+void printArr(int arr[], int len, int k){
 	for(int i=0; i<len; i++){
-		printf("%d\n", arr[i]);
+		if(arr[i]==0){
+			for(int i=0; i<k; i++){
+				printf("0");
+			}
+			printf("\n");
+		}
+		else{
+			printf("%d\n", arr[i]);
+		}
 	}
 }
 
@@ -19,7 +27,6 @@ int getDigit(int x, int i, int length){
     int rwieksza = x%decPow(length-i);
     return (rwieksza - rmniejsza)/decPow(length-i-1);
 }
-
 
 //applies counting sort to digits of pos position, n = len(arr)
 void countingSort(int arr[], int pos, int n, int number_length){
@@ -51,16 +58,13 @@ void radix(int arr[], int len, int number_length){
 }
 
 int main(){
-    /*int t[5] = {35,62,21,93,18};
+    /*int t[5] = {35,00,20,93,18};
 	radix(t, 5, 2);
-    printArr(t, 5);*/
+    printArr(t, 5, 2);*/
     int Z;
     //gets number of data packages Z
     scanf("%d", &Z);
-    int resultmax = Z*1000000;printf("%d", resultmax);
-    /*int result[resultmax];
-	int zcounter=0;
-	printf("gowno");	
+
     for(int i=0; i<Z; i++){
     	int n,k;
     	scanf("%d %d", &n, &k);
@@ -69,13 +73,7 @@ int main(){
     		scanf("%d", &arr[j]);
 		}
 		radix(arr, n, k);
-		for(int j=0; j<n; j++){
-			result[zcounter] = arr[j];
-			zcounter++;
-		}
+		printArr(arr, n, k);
 	}
-	for(int i=0; i<zcounter; i++){
-		printf("%d\n", result[i]);
-	}*/
 	return 0;
 }
