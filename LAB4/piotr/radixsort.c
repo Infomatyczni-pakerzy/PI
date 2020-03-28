@@ -1,3 +1,6 @@
+// Ostrzegam ze dostaje za to 25% w sprawdzarce a jebany dziala
+
+
 #include<stdio.h>
 #include<stdlib.h>
 
